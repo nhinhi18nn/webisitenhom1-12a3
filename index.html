@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhóm 1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#d4fc79,#96e6a1);
+    overflow-x:hidden;
+    color:#1e3d34;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:80px 20px 40px 20px;
+}
+
+header h1{
+    font-size:52px;
+    font-weight:700;
+}
+
+header p{
+    margin-top:15px;
+    font-size:18px;
+    opacity:0.8;
+}
+
+/* BIO */
+.bio{
+    max-width:900px;
+    margin:30px auto;
+    background:rgba(255,255,255,0.95);
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+/* MEMBER GRID */
+.container{
+    max-width:1100px;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    padding:0 20px 80px 20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:all 0.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Avatar */
+.avatar{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+    border:4px solid #96e6a1;
+}
+
+.card h3{
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+/* Màu chữ riêng */
+.yen{ color:#1b8f3c; font-weight:600;}
+.trinh{ color:#1565c0; font-weight:600;}
+.an{ color:#6a1b9a; font-weight:600;}
+
+/* PETAL EFFECT */
+.petal{
+    position:fixed;
+    top:-10px;
+    width:12px;
+    height:18px;
+    background:rgba(255,182,193,0.8);
+    border-radius:50% 50% 50% 0;
+    transform:rotate(45deg);
+    animation:fall linear infinite;
+    z-index:0;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Xin chào đây là trang web của Nhóm 1</h1>
+    <p>Website chính thức – Đoàn kết • Sáng tạo • Phát triển</p>
+</header>
+
+<section class="bio">
+    <h2>Giới thiệu về Nhóm 1</h2>
+    <p>
+        Nhóm 1 là tập thể gồm những thành viên năng động, sáng tạo và luôn 
+        hỗ trợ lẫn nhau trong học tập cũng như các dự án chung. 
+        Chúng tôi hướng đến sự chuyên nghiệp và phát triển bền vững.
+    </p>
+</section>
+
+<section class="container">
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="avatar">
+        <h3 class="yen">Yến Nhi</h3>
+        <p>Thành viên</p>
+    </div>
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="avatar">
+        <h3 class="trinh">Tuyết Trinh</h3>
+        <p>Thành viên</p>
+    </div>
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" class="avatar">
+        <h3 class="an">Khánh An</h3>
+        <p>Thành viên</p>
+    </div>
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar">
+        <h3>Ngọc Khánh</h3>
+        <p>Thành viên</p>
+    </div>
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" class="avatar">
+        <h3>Thành Nhân</h3>
+        <p>Thành viên</p>
+    </div>
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/52.jpg" class="avatar">
+        <h3>Anh Minh</h3>
+        <p>Thành viên</p>
+    </div>
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/29.jpg" class="avatar">
+        <h3>Hoàng Long</h3>
+        <p>Thành viên</p>
+    </div>
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/76.jpg" class="avatar">
+        <h3>Đăng Khoa</h3>
+        <p>Thành viên</p>
+    </div>
+
+</section>
+
+<script>
+function createPetal(){
+    const petal=document.createElement("div");
+    petal.classList.add("petal");
+    petal.style.left=Math.random()*window.innerWidth+"px";
+    petal.style.animationDuration=(6+Math.random()*4)+"s";
+    document.body.appendChild(petal);
+    setTimeout(()=>{petal.remove();},10000);
+}
+setInterval(createPetal,400);
+</script>
+
+</body>
+</html>
